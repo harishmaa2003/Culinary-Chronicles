@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Recipe Details</h1>
+    <nav>
+        <a href="index">Home</a>
+        <a href="about">About Us</a>
+        <a href="create_recipe">Create Recipe</a>
+        <a href="contactUs" class="active">Contact Us</a>
+        <a href="login" class="active">Login</a>
+        <a href="signup" class="active">Signup</a>
+    </nav>
+</header>
+<main>
+    <div id="recipe-details">
+        <!-- Recipe details will be dynamically loaded here -->
+    </div>
+    <section id="ratings">
+        <h3>Ratings and Reviews</h3>
+        <div id="review-list">
+            <!-- Reviews will be dynamically loaded here -->
+        </div>
+        <form id="rating-form" action="recipe" method="post">
+            <label for="rating">Rating:</label>
+            <input type="number" id="rating" name="rating" min="1" max="5" required>
+            <label for="review">Review:</label>
+            <textarea id="review" name="review" required></textarea>
+            <script>
+                document.getElementById('rating-form').addEventListener('submit', function(event) {
+
+                    alert("Your review is saved!");
+
+                });
+            </script>
+            <button type="submit">Submit Review</button>
+        </form>
+    </section>
+</main>
+<footer>
+    <p>&copy; @2024 Culinary Chronicles.com </p>
+</footer>
+</body>
+</html>

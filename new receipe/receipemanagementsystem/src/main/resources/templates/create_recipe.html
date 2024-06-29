@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Recipe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Create Recipe</h1>
+    <nav>
+        <a href="index">Home</a>
+        <a href="about">About Us</a>
+        <a href="create_recipe">Create Recipe</a>
+        <a href="contactUs" class="active">Contact Us</a>
+        <a href="login" class="active">Login</a>
+        <a href="signup" class="active">Signup</a>
+    </nav>
+</header>
+<main>
+    <form id="recipe-form" action="/getRecipe" method="post">
+        <label for="recipe_name">RecipeName:</label>
+        <input type="text" id="recipe_name" name="recipe_name" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <label for="instructions">Instructions:</label>
+        <textarea id="instructions" name="instructions" required></textarea>
+
+        <label for="category">Category:</label>
+        <textarea id="category" name="category" required></textarea>
+        <fieldset>
+            <legend>Ingredients</legend>
+            <div id="ingredients">
+                <div class="ingredient">
+                    <label for="ingredient_name_1">Ingredient:</label>
+                    <input type="text" id="ingredient_name_1" name="ingredient_name[]" required>
+                    <label for="quantity_1">Quantity:</label>
+                    <input type="text" id="quantity_1" name="quantity[]" required>
+                </div>
+            </div>
+            <button type="button" id="add-ingredient" name="button" value="button1">Add Ingredient</button>
+        </fieldset>
+
+        <script>
+            document.getElementById('recipe-form').addEventListener('submit', function(event) {
+
+                alert("Your recipe has been created!");
+                // Here you can add your code to actually save the recipe, e.g., an AJAX request.
+            });
+
+            document.getElementById('add-ingredient').addEventListener('click', function() {
+                const ingredientsDiv = document.getElementById('ingredients');
+                const ingredientCount = ingredientsDiv.getElementsByClassName('ingredient').length;
+                const newIngredient = document.createElement('div');
+                newIngredient.className = 'ingredient';
+
+                const ingredientLabel = document.createElement('label');
+                ingredientLabel.setAttribute('for', 'ingredient_name_' + (ingredientCount + 1));
+                ingredientLabel.textContent = 'Ingredient:';
+                newIngredient.appendChild(ingredientLabel);
+
+                const ingredientInput = document.createElement('input');
+                ingredientInput.type = 'text';
+                ingredientInput.id = 'ingredient_name_' + (ingredientCount + 1);
+                ingredientInput.name = 'ingredient_name[]';
+                ingredientInput.required = true;
+                newIngredient.appendChild(ingredientInput);
+
+                const quantityLabel = document.createElement('label');
+                quantityLabel.setAttribute('for', 'quantity_' + (ingredientCount + 1));
+                quantityLabel.textContent = 'Quantity:';
+                newIngredient.appendChild(quantityLabel);
+
+                const quantityInput = document.createElement('input');
+                quantityInput.type = 'text';
+                quantityInput.id = 'quantity_' + (ingredientCount + 1);
+                quantityInput.name = 'quantity[]';
+                quantityInput.required = true;
+                newIngredient.appendChild(quantityInput);
+
+                ingredientsDiv.appendChild(newIngredient);
+            });
+        </script>
+        <button type="submit"name = "button" value="button2"> Create Recipe</button>
+    </form>
+</main>
+
+<footer>
+    <p>&copy; @2024 Culinary Chronicles.com</p>
+</footer>
+
+</body>
+</html>

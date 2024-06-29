@@ -1,0 +1,78 @@
+/* Reset some default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    background-image: url('rb1q.jpeg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a.active {
+    font-weight: bold;
+}
+
+/* Main content styling */
+main {
+    padding: 2rem;
+    background-color: #fff;
+    margin: 20px auto; /* Center the main content horizontally */
+    max-width: 800px; /* Limit the width of the main content */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.main-section {
+    margin-bottom: 2rem; /* Add some space between sections */
+}
+
+.main-section h3 {
+    margin-top: 1.5rem; /* Space between section headings */
+}
+
+.main-section ul {
+    margin-bottom: 1.5rem; /* Space below lists */
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
